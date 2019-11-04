@@ -1,0 +1,14 @@
+<app-championmodal [championName]="selectedChamp"></app-championmodal>
+
+<app-navbar></app-navbar>
+
+<div class="main-container">
+  <div class="sidebar-container column">
+  <app-sidebar id="sidebar"></app-sidebar>
+  </div>
+  <div class="content-container column">
+    <app-champ-tile *ngFor="let champ of listOfChamps" [champ]="champ" (champSelected)="onChampSelected($event)"></app-champ-tile>
+  </div>
+</div>
+
+

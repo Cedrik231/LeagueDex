@@ -1,0 +1,7 @@
+<div class="img-container" (click)="champSelected.emit(champ)">
+  <img *ngIf="url" src="{{url}}">
+  <div class="title-block">
+    <strong>{{champ}}</strong> <br>
+    <i> {{title}}</i>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="modal fade" id="championModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="championTitle">{{championName}}</h5>
+      </div>
+      <div class="modal-body">
+        <div *ngIf="championName">
+          <img src="{{imageUrl}}" id="championPicture">
+        </div>
+
+        <div id="divStats" *ngIf="stats">
+          <h3>Werte</h3>
+          <div *ngFor="let stat of stats">
+            <b>{{stat.name}}</b><br>
+            <div [ngStyle]="{color: stat.color}">
+              {{stat.value}}
+            </div>
+          </div>
+        </div>
+        <div id="divStats" *ngIf="stats">
+          <h3>Fähigkeiten</h3>
+          <div class="spells-container">
+            <div *ngFor="let spell of spells" class="spell-container">
+              <i>{{spell.name}}</i><br>
+              <img src="{{spell.url}}">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Schließen</button>
+        <button type="button" class="btn btn-primary">Weiter</button>
+      </div>
+    </div>
+  </div>
+</div>

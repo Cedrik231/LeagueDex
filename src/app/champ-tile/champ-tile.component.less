@@ -1,0 +1,31 @@
+@tile-width:100px;
+@tile-background: rgb(45, 51, 78);
+
+.img-container{
+  background: @tile-background;
+  color:white;
+  display: inline-block;
+  padding: 5px;
+  margin: 5px;
+
+  & :hover{
+    cursor: pointer;
+  }
+
+  > img{
+    height: @tile-width;
+    width: @tile-width;
+    box-sizing: border-box;
+    display: block;
+    // display: flex;
+    // flex-grow: 1;
+  }
+
+  > .title-block{
+    width:@tile-width;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    height: 52px;
+    overflow: hidden;
+  }
+}

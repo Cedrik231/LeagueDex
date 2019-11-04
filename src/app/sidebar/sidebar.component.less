@@ -1,0 +1,38 @@
+@background-color:#434d5c;
+@font-color: #fff;
+@sidebar-padding:15px;
+
+:host{
+  height:100%;
+  width: 100%;
+}
+
+.sidebar-container{
+    background-color: @background-color;
+    color:@font-color;
+    padding:@sidebar-padding;
+    height:100%;
+  position: relative;
+
+    // top:0px;
+    // left: 0px;
+
+    .class-picker-label{
+        margin:10px;
+        // margin-left:20px;
+    }
+
+    .class-dropdown{
+        margin-left:10px;
+    }
+
+    .dropdown-item:hover{
+      cursor: pointer;
+    }
+
+    .search-button{
+      position: absolute;
+    bottom: @sidebar-padding;
+    width: calc(100% - 2 * @sidebar-padding);
+    }
+}
