@@ -1,0 +1,43 @@
+<div class="sidebar-container">
+  <h5>Filtern</h5>
+  <div class="class-picker-label">Klasse:</div>
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle class-dropdown" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">
+      {{SelectedClass.name}}
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a *ngFor="let class of Classes" class="dropdown-item" (click)="onClassDropdownSelected(class)">{{class.name}}</a>
+    </div>
+  </div>
+  <button type="button" class="btn btn-info search-button" (click)="onSideBarSearch()">Suchen</button>
+
+  <br>
+
+  <h5>Sortieren</h5>
+  <div class="class-picker-label">Eigenschaft:</div>
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle class-dropdown" type="button" id="dropdownSortButton" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">
+      {{SelectedProperty.name}}
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a *ngFor="let prop of Properties" class="dropdown-item" (click)="onPropertyDropdownSelected(prop)">{{prop.name}}</a>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="custom-control custom-radio">
+    <input type="radio" class="custom-control-input" id="defaultChecked" name="defaultExampleRadios" (click)="onSortOrder(true)" checked>
+    <label class="custom-control-label" for="defaultChecked">Aufsteigend</label>
+  </div>
+
+  <br>
+  
+  <div class="custom-control custom-radio">
+    <input type="radio" class="custom-control-input" id="defaultUnchecked" (click)="onSortOrder(false)" name="defaultExampleRadios">
+    <label class="custom-control-label" for="defaultUnchecked">Absteigend</label>
+  </div>
+
+</div>

@@ -1,0 +1,22 @@
+.main-container{
+  width:100%;
+  height: calc(100vh - 67px);
+  margin-top: 67px;
+  position: fixed;
+}
+
+.column{
+  display: block;
+  height: 100%;
+  float: left;
+
+  &.content-container{
+    width: calc(100% - 200px);
+    overflow: auto;
+  }
+
+  &.sidebar-container{
+    width:200px;
+  }
+}
+
