@@ -1,5 +1,9 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { ApiService } from '../api.service';
+import { protractor } from 'protractor';
+import * as $1 from 'jquery';
+
+declare var $: any;
 
 @Component({
   selector: 'app-championmodal',
@@ -29,6 +33,14 @@ export class ChampionmodalComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
+  }
+
+
+  showMoreStats(oSource){    
+      $1("[id='"+oSource.name+"']").fadeIn();
+  }
+  closeMoreStats(oSource){
+    $1("[id='"+oSource.name+"']").hide();
   }
 
   ngOnChanges() {

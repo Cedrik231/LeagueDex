@@ -28,7 +28,41 @@
     font-size: 14px;
     text-overflow: ellipsis;
     float: left;
-
+    width:130px !important;
     overflow: hidden;
     white-space: nowrap;
  }
+
+ .spellsnstats-container{
+    display: inline-block !important;
+    margin-left: auto;
+ }
+
+ .zoom-effect-container {
+    float: left;
+    position: relative;    
+    margin: 0 auto;
+    overflow: hidden;
+}
+.image-card img {
+    -webkit-transition: 0.4s ease;
+    transition: 0.4s ease;
+  }
+  .zoom-effect-container:hover .image-card img {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+
+  .spell-container-detail{
+    
+    display:none;
+    position: fixed;
+    border:1px solid #000;
+    width:350px;
+    height:auto;      
+    background-color:rgb(171, 178, 185);
+    opacity: 0.90;
+  }
+  
+  
+

@@ -10,6 +10,8 @@
           <img src="{{imageUrl}}" id="championPicture">
         </div>
 
+        <div class="spellsnstats-container">
+
         <div id="divStats" *ngIf="stats">
           <h3>Werte</h3>
           <div *ngFor="let stat of stats">
@@ -22,12 +24,31 @@
         <div id="divStats" *ngIf="stats">
           <h3>Fähigkeiten</h3>
           <div class="spells-container">
-            <div *ngFor="let spell of spells" class="spell-container">
-              <i>{{spell.name}}</i><br>
-              <img src="{{spell.url}}">
-            </div>
+            <div *ngFor="let spell of spells" class="spell-container">                          
+              <i>{{spell.name}}</i><br>        
+              <div class="zoom-effect-container">
+                  <div class="image-card">                      
+                      <img src="{{spell.url}}" id="image{{spell.name}}" (mouseover)="showMoreStats(spell)" (mouseleave)="closeMoreStats(spell)">                                      
+                  </div>
+                  <div id="{{spell.name}}" class="spell-container-detail">
+                    <div class="spell-container-detail-header" style="overflow:hidden">
+                        <img src="{{spell.url}}" width="40px" height="40">                        
+                        <i style="font-size:16px; color:white">{{spell.name}}</i>                      
+                    </div>
+                    <div class="spell-container-detail-content" style="white-space: pre-line;">
+                        <i style="font-size:18px;color:white">Beschreibung</i>    
+                        <div> 
+                           <i style="color:white">{{spell.description}}</i>
+                        <div>
+                    </div>
+                  </div>   
+                </div>                  
+            </div>          
           </div>
         </div>
+
+      </div>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Schließen</button>
